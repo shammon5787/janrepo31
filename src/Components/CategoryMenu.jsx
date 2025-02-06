@@ -10,7 +10,7 @@ const CategoryMenu = () => {
     }
     useEffect(()=>{
         ListUniqueCategories()
-    })
+    },[])
   return (
     <div>
         <h1 className='font-bold text-3xl uppercase'>order your favorite food</h1>
@@ -18,7 +18,7 @@ const CategoryMenu = () => {
             {
                 categories.map((category, i)=>{
                     return(
-                        <button className='bg-blue-600 px-2 py-1 rounded-sm cursor-pointer transition-all duration-500 hover:bg-green-900 font-semibold my-4'>{category}</button>
+                        <button key={i} className='bg-blue-600 px-2 py-1 rounded-sm cursor-pointer transition-all duration-500 hover:bg-green-900 font-semibold my-4'>{category}</button>
                     )
                 })
             }
