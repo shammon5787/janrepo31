@@ -16,8 +16,14 @@ const CardSlice = createSlice({
         },
         removeCard:(state, action)=>{
             state.cart = state.cart.filter((item)=>item.id !== action.payload.id)
+        },
+        increaseItem:(state, action)=>{
+            state.cart = state.cart.map((item)=>item.id === action.payload.id ? {... item,qty : item.qty + 1} : item)
+        },
+        deccreaseItem:(state, action)=>{
+            state.cart = state.cart.map((item)=>item.id === action.payload.id ? {... item,qty : item.qty - 1} : item)
         }
     }
 })
-export const {addCard, removeCard} = CardSlice.actions
+export const {addCard, removeCard, increaseItem, deccreaseItem} = CardSlice.actions
 export default CardSlice.reducer

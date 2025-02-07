@@ -3,7 +3,7 @@ import img from '../assets/Food/3.avif'
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from 'react-redux';
-import { removeCard } from '../Store/CardSlice';
+import { deccreaseItem, increaseItem, removeCard } from '../Store/CardSlice';
 
 const CardItem = ({id, name, image, price, qty}) => {
     const dispatch = useDispatch()
@@ -16,9 +16,9 @@ const CardItem = ({id, name, image, price, qty}) => {
                 <h1>$: {price}</h1>
             </div>
             <div className='flex items-center gap-6 absolute right-7 mt-8 font-semibold'>
-                <FaMinus className='cursor-pointer hover:scale-200 transition-all duration-500' />
+                <FaMinus onClick={()=>qty > 1 ? dispatch(deccreaseItem({id})) : qty = 1}  className='cursor-pointer hover:scale-200 transition-all duration-500' />
                 <span>{qty}</span>
-                <FaPlus className='cursor-pointer hover:scale-200 transition-all duration-500' />
+                <FaPlus onClick={()=>dispatch(increaseItem({id}))} className='cursor-pointer hover:scale-200 transition-all duration-500' />
             </div>
         </div>
     )
