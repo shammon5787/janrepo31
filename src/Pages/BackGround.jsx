@@ -9,11 +9,11 @@ const BackGround = () => {
     {text1: "Vitz", text2: "Is New Vitz"},
   ]
   const [heroCount, setheroCount] = useState(2)
-  const [palystatus, setPlayStatus] = useState(false)
+  const [playstatus, setPlayStatus] = useState(true)
   return (
     <div className='mt-24'>
-        <Background palystatus = {palystatus} heroCount = {heroCount}  />
-        <Hero heroCount = {heroCount} palystatus = {palystatus} setheroCount = {setheroCount} setPlayStatus = {setPlayStatus} />
+        <Background playstatus = {playstatus} heroCount = {heroCount}  />
+        <Hero heroCount = {heroCount} playstatus = {playstatus} setheroCount = {setheroCount} setPlayStatus = {setPlayStatus} setData = {setData[heroCount]} />
     </div>
   )
 }

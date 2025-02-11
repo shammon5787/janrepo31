@@ -5,8 +5,8 @@ import img2 from '../assets/2.jpg'
 import img3 from '../assets/3.jpg'
 import img4 from '../assets/4.jpg'
 
-const Background = ({palystatus, heroCount}) => {
-  if(palystatus){
+const Background = ({playstatus, heroCount}) => {
+  if(playstatus){
     return(
         <video className='fixed top-0 right-0 left-0 bottom-0 w-full -z-10 ' autoPlay loop muted>
             <source src= {video} type='video/mp4' />
