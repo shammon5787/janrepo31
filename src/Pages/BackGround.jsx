@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Background from '../Background/Background'
 import Hero from '../Background/Hero'
 
@@ -9,7 +9,17 @@ const BackGround = () => {
     {text1: "Vitz", text2: "Is New Vitz"},
   ]
   const [heroCount, setheroCount] = useState(2)
-  const [playstatus, setPlayStatus] = useState(true)
+  const [playstatus, setPlayStatus] = useState(false)
+  useEffect(() => {
+    setInterval(() => {
+      setheroCount((count)=>{
+        return(
+          count === 2 ? 0 : count + 1
+        )
+      })
+    }, 3000);
+  },  [])
+  
   return (
     <div className='mt-24'>
         <Background playstatus = {playstatus} heroCount = {heroCount}  />
