@@ -21,23 +21,11 @@
 
 // export default Slider
 
-
 import React from 'react'
-import { useState } from 'react'
 
 const Slider = () => {
-    const [search1, setSearch] = useState('hi')
-    const nowSearch = (e) =>{
-        const newV = e.target.value;
-        // search1 = newV
-        setSearch(newV)
-    }
-    
   return (
-    <div>
-        <input onChange={nowSearch} className='bg-red-200 rounded-md p-3 text-black' type="search" name="seach" id="" />
-        <h1>your new valuue is : {search1} </h1>
-    </div>
+    <div>Slider</div>
   )
 }
 
